@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Recordings</title>
+  <link rel="stylesheet" href="main.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fontdiner+Swanky&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  <script src="script.js"></script>
+</head>
+<body>
+<header>
+  <div class="logo">My Guitar Portfolio</div>
+</header>
+<nav>
+  <div class="hamburger" onclick="toggleMenu()">
+    <div class="bar"></div>
+    <div class="bar"></div>
+    <div class="bar"></div>
+  </div>
+  <ul id="menu">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="gear.html">My Gear</a></li>
+    <li><a href="recordings.html">Recordings</a></li>
+    <li><a href="gigs.html">Gigs</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+</nav>
+<main>
+  <div class="hero">Recordings</div>
+  <div class="content">
+    <div class="box">
+      <p>Here you'll find recordings of songs that I play and videos from gigs I played</p>
+    </div>
+  </div>
+  <div class="sounds">
+    <div class="song">
+      <h3>Bop City by Gene Summers</h3>
+      <audio controls>
+        <source src="sound/Bop_City-2023-02-17-00-04-57.mp3" type="audio/mp3">
+      </audio>
+    </div>
+    <div class="song">
+      <h3>One Hand Loose by Charlie Feathers</h3>
+      <audio controls>
+        <source src="sound/One_Hand_Loose-2023-02-01-23-37-52.mp3" type="audio/mp3">
+      </audio>
+    </div>
+    <div class="song">
+      <h3>Sleepwalk by Santos & Johnny</h3>
+      <audio controls>
+        <source src="sound/Sleepwalk-2023-02-23-23-05-08.mp3" type="audio/mp3">
+      </audio>
+    </div>
+    <div class="song">
+      <h3>Boppin Mary Lou by Marc & the Wild Ones</h3>
+      <audio controls>
+        <source src="sound/Boppin_Mary_Lou-2023-02-17-00-05-34.mp3" type="audio/mp3">
+      </audio>
+    </div>
+  </div>
+</main>
+<footer>
+  <p id="myBtn" class="impressum">Impressum</p>
+</footer>
+
+<div id="myModal" class="modal">
+  <div class="modal-content">
+    <span class="close ">x</span>
+    <h1>Impressum</h1>
+    <h2>Marius Morf</h2>
+    <h3>Adress:</h3>
+    <p>Amtmerswil 2, 3184 Wünnewil</p>
+    <h3>Contact:</h3>
+    Phone: +41 77 422 82 62 <br> Email: mmo159388@stud.gibb.ch
+    <h3>Owner:</h3>
+    Marius Morf
+    <h3>Images and text:</h3>
+    All images are from mine
+  </div>
+</div>
+
+<script>
+  function toggleMenu() {
+    document.getElementById('menu').classList.toggle('active');
+  }
+</script>
+</body>
+</html>

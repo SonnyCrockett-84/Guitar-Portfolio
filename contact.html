@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact</title>
+    <link rel="stylesheet" href="main.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fontdiner+Swanky&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <script src="script.js"></script>
+</head>
+<body>
+<header>
+    <div class="logo">My Guitar Portfolio</div>
+</header>
+<nav>
+    <div class="hamburger" onclick="toggleMenu()">
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+    </div>
+    <ul id="menu">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="gear.html">My Gear</a></li>
+        <li><a href="recordings.html">Recordings</a></li>
+        <li><a href="gigs.html">Gigs</a></li>
+        <li><a href="contact.html">Contact</a></li>
+    </ul>
+</nav>
+<main>
+    <div class="hero">Contact</div>
+    <div class="content">
+        <div class="box">
+            <p> Are you interested in booking me for an event? Then fill out the contact form and I am going
+            to reply to your message as soon as possible</p>
+        </div>
+    </div>
+    <div class="form">
+        <form id="contact-form">
+            <label for="fname">First name:</label>
+            <input type="text" id="fname" name="fname" required><br>
+            <label for="lname">Last name:</label>
+            <input type="text" id="lname" name="lname" required><br>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required><br>
+            <label for="message">Message:</label>
+            <textarea id="message" name="message"></textarea><br>
+            <input type="submit" value="Submit" class="submit-button">
+        </form>
+    </div>
+</main>
+<footer>
+    <p id="myBtn" class="impressum">Impressum</p>
+</footer>
+
+<div id="myModal" class="modal">
+    <div class="modal-content">
+        <span class="close ">x</span>
+        <h1>Impressum</h1>
+        <h2>Marius Morf</h2>
+        <h3>Adress:</h3>
+        <p>Amtmerswil 2, 3184 Wünnewil</p>
+        <h3>Contact:</h3>
+        Phone: +41 77 422 82 62 <br> Email: mmo159388@stud.gibb.ch
+        <h3>Owner:</h3>
+        Marius Morf
+        <h3>Images and text:</h3>
+        All images are from mine
+    </div>
+</div>
+
+<script>
+    function toggleMenu() {
+        document.getElementById('menu').classList.toggle('active');
+    }
+</script>
+</body>
+</html>

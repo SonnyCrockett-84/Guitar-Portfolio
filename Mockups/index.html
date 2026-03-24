@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Guitar Portfolio</title>
+    <link rel="stylesheet" href="main.css">
+</head>
+<body>
+    <header>
+        <div class="logo">My Guitar Portfolio</div>
+    </header>
+    <nav>
+        <div class="hamburger" onclick="toggleMenu()">
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+        </div>
+        <ul id="menu">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">My Gear</a></li>
+            <li><a href="#">Recordings</a></li>
+            <li><a href="#">Gigs</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+    </nav>
+    <main>
+        <div class="hero">My Guitar Portfolio</div>
+        <dif class="content">
+            <div class="text">
+                <p>Some text about your guitar passion. Add more to engage users (per Teil 3).</p>
+            </div>
+            <div class="image">
+                <img src="guitar.jpg" alt="Guitar Image" style="width:100%;">
+            </div>
+        </div>
+    </main>
+    <footer>
+        <a href="#">Impressum</a>
+    </footer>
+    <script>
+        function toggleMenu() {
+            document.getElementById('menu').classList.toggle('active');
+        }
+    </script>
+</body>
+</html>
