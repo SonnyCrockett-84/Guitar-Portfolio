@@ -11,44 +11,41 @@ body {
 
 header {
     background: #1B1B19;
-    padding: 10px;
-    text-align: center;
     border-bottom: 1px solid #ffff;
-    font-family: "Fontdiner Swanky", serif;
-    min-height: 50px;
+    position: relative;
+    padding: 15px 20px;
+    min-height: 70px;
+}
+
+.header-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
 }
 
 .logo {
-    font-size: 24px;
+    font-family: "Fontdiner Swanky", serif;
+    font-size: 1.8rem;
     font-weight: bold;
-}
-
-nav {
-    display: flex;
-    justify-content: center;
-    margin: 20px 0;
-}
-
-nav ul {
-    list-style: none;
-    padding: 0;
-    display: flex;
-}
-
-nav li {
-    margin: 0 10px;
-}
-
-nav a {
-    text-decoration: none;
     color: #ffff;
-    font-family: "Roboto", sans-serif;
-    font-size: 1.25rem;
 }
 
-nav a:hover {
-    color: #FF6600;
-    transition: color 0.3s;
+.hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    z-index: 10;
+}
+
+.bar {
+    width: 30px;
+    height: 4px;
+    background: #ffff;
+    margin: 4px 0;
+    transition: 0.3s;
 }
 
 .image img:hover {
@@ -132,7 +129,52 @@ p {
     font-size: 1.125rem;
 }
 
-/* Image Gallery */
+/* Nav Bar */
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    gap: 10px;
+}
+
+nav li {
+    margin: 0 10px;
+}
+
+nav a {
+    text-decoration: none;
+    color: #ffff;
+    font-family: "Roboto", sans-serif;
+    font-size: 1.25rem;
+    padding: 14px 16px;
+    display: block;
+}
+
+nav a:hover {
+    color: #FF6600;
+    transition: color 0.3s;
+}
+
+nav a.active {
+    background-color: #460C0B;
+    color: white;
+    border-radius: 15px;
+}
+
+/* ================ IMAGE GALLERY ===================== */
 div.gallery {
     border: 1px solid #ccc;
 }
@@ -164,7 +206,7 @@ div.desc {
     width: 24.99999%;
 }
 
-/* Table */
+/* ==================== TABLE ======================= */
 
 th, td {
     font-family: "Roboto", sans-serif;
@@ -201,7 +243,7 @@ th, td {
     border-bottom: 2px solid #460C0B;
 }
 
-/* Form */
+/* =================== FORM ============================== */
 
 input[type=text], input[type=email], select, textarea {
     width: 100%;
@@ -233,37 +275,7 @@ input[type=submit]:hover {
     padding: 20px;
 }
 
-/*
-
-#contact-form {
-    text-align: center;
-    position: relative;
-    margin-top: 30px;
-}
-
-#contact-form input, #contact-form textarea {
-    background: #333333;
-    border: 0 none;
-    border-radius: 12px;
-    box-shadow: 0 0 15px 1px rgba(0, 0, 0, 0.3);
-    padding: 20px 30px;
-    box-sizing: border-box;
-    width: 80%;
-    margin: 0 10%;
-    position: relative;
-}
-
-#contact-form .submit-button {
-    background: #460C0B;
-}
-
-#contact-form label {
-    margin-top: 30px;
-}
-
-*/
-
-/* Font */
+/* ======================= FONT ======================== */
 
 .fontdiner-swanky-regular {
     font-family: "Fontdiner Swanky", serif;
@@ -281,7 +293,7 @@ input[type=submit]:hover {
                      "wdth" 100;
 }
 
-/* Modal */
+/* ========================== MODAL ========================= */
 
 .modal {
     display: none;
@@ -322,18 +334,40 @@ input[type=submit]:hover {
     cursor: pointer;
 }
 
-/* Responsive */
+/* ============================ MOBILE =========================== */
 
-@media (max-width: 600px) {
+@media (max-width: 768px) {
+    .hamburger {
+        display: flex;
+    }
+
     nav ul {
         display: none;
         flex-direction: column;
+        width: 100%;
+        background: #1B1B19;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        padding: 15px 0;
+        border-top: 1px solid #FFFF;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+        z-index: 15;
     }
     nav ul.active {
         display: flex;
     }
-    .hamburger {
-        display: block;
+
+    header {
+        min-height: 70px;
+    }
+
+    header:has(ul.active) {
+        min-height: 260px;
+    }
+
+    main {
+        margin-top: 20px;
     }
 
     .content {
@@ -346,13 +380,5 @@ input[type=submit]:hover {
     .responsive {
         width: 49.99999%;
         margin: 6px 0;
-    }
-}
-
-@media screen and (max-width: 600px) {
-    .nav a:not(:first-child) { display: none; }
-    .nav a.icon {
-        float: right;
-        display: block;
     }
 }
