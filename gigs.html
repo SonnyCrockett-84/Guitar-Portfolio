@@ -8,26 +8,29 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Fontdiner+Swanky&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-  <script src="script.js"></script>
 </head>
 <body>
 <header>
-  <div class="logo">My Guitar Portfolio</div>
-</header>
-<nav>
-  <div class="hamburger" onclick="toggleMenu()">
-    <div class="bar"></div>
-    <div class="bar"></div>
-    <div class="bar"></div>
+  <div class="header-content">
+    <div class="logo">My Guitar Portfolio</div>
+
+    <div class="hamburger" onclick="toggleMenu()">
+      <div class="bar"></div>
+      <div class="bar"></div>
+      <div class="bar"></div>
+    </div>
+
+    <nav>
+      <ul id="menu">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="gear.html">My Gear</a></li>
+        <li><a href="recordings.html">Recordings</a></li>
+        <li><a href="gigs.html" class="active">Gigs</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
   </div>
-  <ul id="menu">
-    <li><a href="index.html">Home</a></li>
-    <li><a href="gear.html">My Gear</a></li>
-    <li><a href="recordings.html">Recordings</a></li>
-    <li><a href="gigs.html" class="active">Gigs</a></li>
-    <li><a href="contact.html">Contact</a></li>
-  </ul>
-</nav>
+</header>
 <main>
   <div class="hero">Gigs</div>
   <div class="content">
@@ -72,17 +75,15 @@
     <span class="close ">x</span>
     <h1>Impressum</h1>
     <h2>Marius Morf</h2>
-    <h3>Adress:</h3>
-    <p>Amtmerswil 2, 3184 Wünnewil</p>
-    <h3>Contact:</h3>
-    Phone: +41 77 422 82 62 <br> Email: mmo159388@stud.gibb.ch
     <h3>Owner:</h3>
     Marius Morf
-    <h3>Images and text:</h3>
-    All images are from mine
+    <h3>Copyright:</h3>
+    All images and recordings on this website were created or photographed by me and are protected by copyright.
+    Any use, reproduction or distribution without my prior written consent is not permitted.
   </div>
 </div>
 
+<script src="script.js"></script>
 <script>
   function toggleMenu() {
     document.getElementById('menu').classList.toggle('active');

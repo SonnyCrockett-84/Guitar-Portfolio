@@ -1,67 +1,26 @@
+* {
+    box-sizing: border-box;
+}
+
+:root {
+    --color-primary: #460C0B;
+    --color-bg-dark: #1B1B19;
+    --color-bg-main: #2D2D2D;
+}
+
 body {
-    font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background: #2D2D2D;
-    color: #ffff;
+    background: var(--color-bg-main);
+    color: white;
     min-height: 100vh;
     display: flex;
     flex-direction: column;
-}
-
-header {
-    background: #1B1B19;
-    border-bottom: 1px solid #ffff;
-    position: relative;
-    padding: 15px 20px;
-    min-height: 70px;
-}
-
-.header-content {
-    max-width: 1200px;
-    margin: 0 auto;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    flex-wrap: wrap;
-}
-
-.logo {
-    font-family: "Fontdiner Swanky", serif;
-    font-size: 1.8rem;
-    font-weight: bold;
-    color: #ffff;
-}
-
-.hamburger {
-    display: none;
-    flex-direction: column;
-    cursor: pointer;
-    z-index: 10;
-}
-
-.bar {
-    width: 30px;
-    height: 4px;
-    background: #ffff;
-    margin: 4px 0;
-    transition: 0.3s;
+    font-family: "Roboto", sans-serif;
 }
 
 .image img:hover {
     transform: scale(1.05);
-    transition: transform 0.3s;
-}
-.hamburger {
-    display: none;
-    cursor: pointer;
-}
-
-.bar {
-    width: 25px;
-    height: 3px;
-    background: #333;
-    margin: 5px;
 }
 
 main {
@@ -73,7 +32,7 @@ main {
 }
 
 .hero {
-    background: #460C0B;
+    background: var(--color-primary);
     padding: 25px;
     font-size: 2rem;
     margin-bottom: 20px;
@@ -103,19 +62,20 @@ main {
 .image img {
     width: 100%;
     height: auto;
+    transition: transform 0.3s;
 }
 
 footer {
     text-align: center;
     padding: 10px;
-    background: #1B1B19;
-    border-top: 1px solid #ffff;
+    background: var(--color-bg-dark);
+    border-top: 1px solid white;
     min-height: 50px;
 }
 
 footer p {
     text-decoration: none;
-    color: #ffff;
+    color: white;
     transition: color 0.3s;
     font-size: 1.25rem;
 }
@@ -129,17 +89,70 @@ p {
     font-size: 1.125rem;
 }
 
-/* Nav Bar */
+.sounds {
+    flex: 1;
+    text-align: left;
+}
+
+.song {
+    margin-bottom: 20px;
+}
+
+.song h3 {
+    font-family: "Fontdiner Swanky", serif;
+    font-size: 1rem;
+    margin-bottom: 8px;
+    color: white;
+}
+
+audio {
+    width: 100%;
+}
+
+/* ================= HEADER & NAVIGATION =============== */
+
+header {
+    background: var(--color-bg-dark);
+    border-bottom: 1px solid white;
+    position: relative;
+    padding: 15px 20px;
+    min-height: 70px;
+}
+
+.header-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
 
 .logo {
-    font-size: 24px;
+    font-family: "Fontdiner Swanky", serif;
+    font-size: 1.8rem;
     font-weight: bold;
+    color: white;
+}
+
+.hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    z-index: 10;
+}
+
+.bar {
+    width: 30px;
+    height: 4px;
+    background: white;
+    margin: 4px 0;
+    transition: 0.3s;
 }
 
 nav {
+    width: 100%;
     display: flex;
     justify-content: center;
-    margin: 20px 0;
 }
 
 nav ul {
@@ -156,25 +169,26 @@ nav li {
 
 nav a {
     text-decoration: none;
-    color: #ffff;
+    color: white;
     font-family: "Roboto", sans-serif;
     font-size: 1.25rem;
     padding: 14px 16px;
     display: block;
+    transition: color 0.3s;
 }
 
 nav a:hover {
     color: #FF6600;
-    transition: color 0.3s;
 }
 
 nav a.active {
-    background-color: #460C0B;
+    background-color: var(--color-primary);
     color: white;
     border-radius: 15px;
 }
 
 /* ================ IMAGE GALLERY ===================== */
+
 div.gallery {
     border: 1px solid #ccc;
 }
@@ -196,14 +210,14 @@ div.desc {
     text-align: center;
 }
 
-* {
-    box-sizing: border-box;
+.gallery-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
 }
 
 .responsive {
     padding: 0 6px;
-    float: left;
-    width: 24.99999%;
 }
 
 /* ==================== TABLE ======================= */
@@ -222,8 +236,8 @@ th, td {
 }
 
 .styled-table thead tr {
-    background-color: #460C0B;
-    color: #ffffff;
+    background-color: var(--color-primary);
+    color: white;
     text-align: left;
 }
 
@@ -240,10 +254,14 @@ th, td {
 }
 
 .styled-table tbody tr:last-of-type {
-    border-bottom: 2px solid #460C0B;
+    border-bottom: 2px solid var(--color-primary);
 }
 
 /* =================== FORM ============================== */
+
+input, textarea, select {
+    font-family: "Roboto", sans-serif;
+}
 
 input[type=text], input[type=email], select, textarea {
     width: 100%;
@@ -257,7 +275,7 @@ input[type=text], input[type=email], select, textarea {
 }
 
 input[type=submit] {
-    background-color: #460C0B;
+    background-color: var(--color-primary);
     color: white;
     padding: 12px 20px;
     border: none;
@@ -275,22 +293,39 @@ input[type=submit]:hover {
     padding: 20px;
 }
 
+.error-msg {
+    color: #FF4444;
+    font-size: 0.875rem;
+    margin-top: -10px;
+    margin-bottom: 10px;
+    display: none;
+}
+
+.success-msg {
+    background-color: #2A5C2A;
+    color: white;
+    padding: 15px;
+    border-radius: 8px;
+    text-align: center;
+    font-size: 1rem;
+    margin-top: 15px;
+    display: none;
+}
+
 /* ======================= FONT ======================== */
 
 .fontdiner-swanky-regular {
     font-family: "Fontdiner Swanky", serif;
+    font-optical-sizing: auto;
     font-weight: 400;
     font-style: normal;
 }
 
-
 .roboto-main {
-             font-family: "Roboto", sans-serif;
-             font-optical-sizing: auto;
-             font-weight: 300;
-             font-style: normal;
-             font-variation-settings:
-                     "wdth" 100;
+    font-family: "Roboto", sans-serif;
+    font-weight: 300;
+    font-style: normal;
+    font-variation-settings: "wdth" 100;
 }
 
 /* ========================== MODAL ========================= */
@@ -310,10 +345,10 @@ input[type=submit]:hover {
 }
 
 .modal-content {
-    background-color: #460C0B;
+    background-color: var(--color-primary);
     margin: 10% auto;
     padding: 30px;
-    border: 2px solid #ffff;
+    border: 2px solid white;
     width: 80%;
     max-width: 600px;
     border-radius: 25px;
@@ -321,7 +356,7 @@ input[type=submit]:hover {
 }
 
 .close {
-    color: black;
+    color: white;
     float: right;
     font-size: 29px;
     font-weight: bold;
@@ -329,7 +364,7 @@ input[type=submit]:hover {
 
 .close:hover,
 .close:focus {
-    color: black;
+    color: #FF6600;
     text-decoration: none;
     cursor: pointer;
 }
@@ -345,25 +380,28 @@ input[type=submit]:hover {
         display: none;
         flex-direction: column;
         width: 100%;
-        background: #1B1B19;
-        position: absolute;
-        top: 100%;
-        left: 0;
+        background: var(--color-bg-dark);
         padding: 15px 0;
-        border-top: 1px solid #FFFF;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
-        z-index: 15;
+        border-top: 1px solid white;
     }
+
+    nav {
+        width: 100%;
+    }
+
     nav ul.active {
         display: flex;
     }
 
-    header {
-        min-height: 70px;
+    .header-content {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: flex-start;
+        flex-wrap: wrap;
     }
 
-    header:has(ul.active) {
-        min-height: 260px;
+    .logo {
+        text-align: left;
     }
 
     main {
@@ -375,10 +413,15 @@ input[type=submit]:hover {
         align-items: center;
     }
     .image {
+        width: 100%;
         max-width: 100%;
     }
+
+    .gallery-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
     .responsive {
-        width: 49.99999%;
-        margin: 6px 0;
+        margin: 0;
     }
 }
